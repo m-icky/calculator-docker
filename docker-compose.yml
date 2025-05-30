@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+       - "3000:80"
+    restart: always
+    container_name: calculator
+    volumes:
+      - ./src:/app/src
+      - /app/node_modules
