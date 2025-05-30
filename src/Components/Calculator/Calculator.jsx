@@ -27,22 +27,29 @@ const Calculator = () => {
   ];
 
   return (
-    <div className="calculator-container">
-      <div className="calculator-screen">{input || '0'}</div>
-      <div className="calculator-buttons">
-        {buttons.map((row, rowIndex) => (
-          <div key={rowIndex} className="calculator-row">
-            {row.map((btn, i) => (
-              <button
-                key={i}
-                className={`btn ${btn === '=' ? 'equals' : ''} ${['/', '*', '-', '+'].includes(btn) ? 'operator' : ''} ${btn === '0' ? 'zero' : ''}`}
-                onClick={() => handleClick(btn)}
-              >
-                {btn}
-              </button>
-            ))}
-          </div>
-        ))}
+    <div className="main-container">
+      <div className="label">
+        <h1>
+          Modern Calculator
+        </h1>
+      </div>
+      <div className="calculator-container">
+        <div className="calculator-screen">{input || '0'}</div>
+        <div className="calculator-buttons">
+          {buttons.map((row, rowIndex) => (
+            <div key={rowIndex} className="calculator-row">
+              {row.map((btn, i) => (
+                <button
+                  key={i}
+                  className={`btn ${btn === '=' ? 'equals' : ''} ${['/', '*', '-', '+'].includes(btn) ? 'operator' : ''} ${btn === '0' ? 'zero' : ''}`}
+                  onClick={() => handleClick(btn)}
+                >
+                  {btn}
+                </button>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
